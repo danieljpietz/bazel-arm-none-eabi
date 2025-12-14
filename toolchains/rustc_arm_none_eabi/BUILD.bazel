@@ -1,0 +1,20 @@
+"""Rust toolchain for ARM none-EABI targets."""
+
+load("@rules_rust//rust:toolchain.bzl", "rust_toolchain")
+
+package(default_visibility = ["//visibility:public"])
+
+# Rust toolchain that inherits from the downloaded Rust distribution
+rust_toolchain(
+    name = "rustc_arm_none_eabi",
+    binary_ext = "",
+    dylib_ext = ".so",
+    exec_triple = "aarch64-apple-darwin",
+    rust_doc = "@rust//:bin/rustdoc",
+    rust_std = "@rust//:lib/rustlib/thumbv7m-none-eabi/lib",
+    rustc = "@rust//:bin/rustc",
+    rustfmt = "@rust//:bin/rustfmt",
+    staticlib_ext = ".a",
+    stdlib_linkflags = [],
+    target_triple = "thumbv7m-none-eabi",
+)

@@ -1,0 +1,22 @@
+"""C binary that demonstrates calling Rust functions via FFI.
+
+Example of C as the main entry point calling Rust library functions.
+
+Pattern for embedding Rust in C projects:
+1. Create a rust_library or rust_static_library with pub extern "C" functions
+2. Link it as a dependency of cc_binary
+3. Include generated headers and call the C-compatible functions
+
+In real embedded projects:
+- C: handles startup, interrupt handlers, hardware initialization
+- Rust: handles application logic, critical sections
+"""
+
+# Simple C binary demonstrating the pattern
+cc_binary(
+    name = "c_calls_rust",
+    srcs = ["main.c"],
+)
+
+
+

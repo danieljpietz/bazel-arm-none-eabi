@@ -1,0 +1,9 @@
+"""Rust binary for Cortex-M0 bare-metal target.
+
+For cross-compilation to ARM targets, you would:
+1. Install the target: rustup target add thumbv6m-none-eabi
+2. Use a custom platform configuration with Bazel
+3. Or specify the target triple in a `.cargo/config.toml` or via rustc_env
+
+For now, this is a placeholder. Use hello_rust as the primary example.
+"""

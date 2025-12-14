@@ -1,0 +1,30 @@
+"""Rust binary that calls C functions.
+
+Example of Rust as the main entry point calling C library functions.
+This is useful for:
+- Rust applications using C libraries
+- Bare-metal Rust code leveraging optimized C implementations
+
+In a real embedded project, you would use cc_library for the C code
+and link it properly with rust_binary.
+"""
+
+load("@rules_rust//rust:defs.bzl", "rust_binary")
+
+# C library with helper functions
+cc_library(
+    name = "c_helpers",
+    srcs = ["c_helpers.c"],
+    hdrs = ["c_helpers.h"],
+)
+
+# Rust binary that calls C functions
+rust_binary(
+    name = "rust_calls_c",
+    srcs = [
+        "main.rs",
+        "c_interface.rs",
+    ],
+    edition = "2021",
+    deps = [":c_helpers"],
+)

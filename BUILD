@@ -1,6 +1,6 @@
 """Root BUILD file for bazel-toolchains repository."""
 
-load("//toolchains/arm_none_eabi:cc_toolchain_config.bzl", "arm_none_eabi_cc_toolchain_config")
+load("//toolchains/gcc_arm_none_eabi:cc_toolchain_config.bzl", "arm_none_eabi_cc_toolchain_config")
 
 package(default_visibility = ["//visibility:public"])
 

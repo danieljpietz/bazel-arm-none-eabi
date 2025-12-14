@@ -98,13 +98,11 @@ def _impl(ctx):
         cxx_builtin_include_directories = list(ctx.attr.builtin_include_dirs),
     )
 
-# Define the rule at TOP LEVEL (required).
 arm_none_eabi_cc_toolchain_config = rule(
     implementation = _impl,
     attrs = {
         "bin_dir": attr.string(mandatory = True),
-        "sysroot": attr.string(default = ""),
-        "builtin_include_dirs": attr.string_list(default = []),
+        "sysroot": attr.string(mandatory = True),
+        "builtin_include_dirs": attr.string_list(mandatory = True),
     },
-    provides = [CcToolchainConfigInfo],
 )
