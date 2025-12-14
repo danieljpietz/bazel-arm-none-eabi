@@ -12,5 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: bazelbuild/setup-bazelisk@v3
-      - run: bazel build //test/...
-      - run: ls -lah bazel-bin/test/
+      - name: Build & Test
+        run: |
+          bazel test //... \
+            --repository_cache=$HOME/.cache/bazel-repo \
+            --disk_cache=$HOME/.cache/bazel-disk
