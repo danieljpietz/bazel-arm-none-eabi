@@ -14,6 +14,6 @@ jobs:
       - uses: bazelbuild/setup-bazelisk@v3
       - name: Build & Test
         run: |
-          bazel test //... \
-            --repository_cache=$HOME/.cache/bazel-repo \
-            --disk_cache=$HOME/.cache/bazel-disk
+          bazel build --config=ci //test/gcc/... --platforms=//platforms:arm_none_eabi
+          bazel build --config=ci //test/interop/... --platforms=//platforms:arm_none_eabi
+          bazel build --config=ci //test/rustc/...

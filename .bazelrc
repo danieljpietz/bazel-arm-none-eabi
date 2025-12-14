@@ -5,3 +5,7 @@ build --extra_toolchains=//:arm_none_eabi_toolchain
 
 # Show detailed failure messages
 build --verbose_failures
+
+# CI configuration with caching for faster builds
+build:ci --repository_cache=$HOME/.cache/bazel-rep
+build:ci --disk_cache=$HOME/.cache/bazel-disk       
