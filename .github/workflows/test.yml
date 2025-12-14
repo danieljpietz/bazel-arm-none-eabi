@@ -15,5 +15,5 @@ jobs:
       - name: Build & Test
         run: |
           bazel build --config=ci //test/gcc/... --platforms=//platforms:arm_none_eabi
-          bazel build --config=ci //test/interop/... --platforms=//platforms:arm_none_eabi
+          bazel build --config=ci //test/interop/...
           bazel build --config=ci //test/rustc/...
