@@ -1,4 +1,4 @@
-# ARM Bazel Toolchain
+# Bazel ARM-None-EABI Toolchain
 
 Bazel toolchain for bare-metal ARM development with GCC 14.3.
 

@@ -1,4 +1,4 @@
-module(name = "bazel-toolchains", version = "0.1.0")
+module(name = "bazel-arm-none-eabi", version = "0.1.0")
 
 bazel_dep(name = "platforms", version = "0.0.11")
 
