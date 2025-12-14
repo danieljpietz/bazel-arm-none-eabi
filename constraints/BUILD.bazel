@@ -1,0 +1,32 @@
+"""Constraint definitions for ARM toolchains."""
+
+package(default_visibility = ["//visibility:public"])
+
+# Host constraints
+constraint_setting(
+    name = "gcc_version",
+)
+
+constraint_value(
+    name = "gcc_version_unspecified",
+    constraint_setting = ":gcc_version",
+)
+
+constraint_value(
+    name = "gcc_14_3",
+    constraint_setting = ":gcc_version",
+)
+
+constraint_setting(
+    name = "darwin_host_arch",
+)
+
+constraint_value(
+    name = "darwin_host_arch_unspecified",
+    constraint_setting = ":darwin_host_arch",
+)
+
+constraint_value(
+    name = "darwin_arm64_host",
+    constraint_setting = ":darwin_host_arch",
+)

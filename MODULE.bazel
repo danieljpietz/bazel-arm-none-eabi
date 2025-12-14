@@ -1,0 +1,5 @@
+module(name = "bazel-toolchains", version = "0.1.0")
+
+bazel_dep(name = "platforms", version = "0.0.11")
+
+register_toolchains("//:arm_none_eabi_toolchain")

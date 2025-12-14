@@ -1,0 +1,15 @@
+cc_binary(
+    name = "hello.elf",
+    srcs = ["hello.c"],
+    additional_linker_inputs = ["linker.ld"],
+    linkopts = [
+        "-nostdlib",
+        "-nostartfiles",
+        "-Wl,-T,$(location linker.ld)",
+        "-Wl,--gc-sections",
+    ],
+    copts = [
+        "-mcpu=cortex-m4",
+        "-mthumb",
+    ],
+)

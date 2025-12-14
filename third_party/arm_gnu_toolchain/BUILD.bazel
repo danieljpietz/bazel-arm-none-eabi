@@ -1,0 +1,60 @@
+"""ARM GNU Toolchain for arm-none-eabi target.
+
+This toolchain is the ARM GNU Embedded Toolchain version 14.3.rel1 for Darwin ARM64 hosts.
+Source: https://github.com/armmbed/gnu-tools-for-arm-embedded-processors/releases/
+"""
+
+package(default_visibility = ["//visibility:public"])
+
+# Export the toolchain as a single filegroup for consumption
+filegroup(
+    name = "all_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/**"]),
+)
+
+# Bin directory for tools
+filegroup(
+    name = "bin_dir",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/*"]),
+)
+
+# Separate filegroups for different tool categories
+filegroup(
+    name = "compiler_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc*"]),
+)
+
+filegroup(
+    name = "linker_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-ld*"]),
+)
+
+filegroup(
+    name = "ar_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-ar"]),
+)
+
+filegroup(
+    name = "as_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-as"]),
+)
+
+filegroup(
+    name = "nm_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-nm"]),
+)
+
+filegroup(
+    name = "objcopy_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy"]),
+)
+
+filegroup(
+    name = "objdump_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objdump"]),
+)
+
+filegroup(
+    name = "strip_files",
+    srcs = glob(["arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-strip"]),
+)

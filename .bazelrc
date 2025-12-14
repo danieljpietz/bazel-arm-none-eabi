@@ -1,0 +1,9 @@
+build --incompatible_enable_cc_toolchain_resolution
+build --extra_toolchains=//:arm_none_eabi_toolchain
+build --platforms=//platforms:arm_none_eabi
+
+# Verbose output for debugging (comment out for normal builds)
+# build -s
+
+# Show detailed failure messages
+build --verbose_failures

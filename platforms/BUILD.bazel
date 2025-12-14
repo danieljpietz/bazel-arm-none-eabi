@@ -1,0 +1,7 @@
+platform(
+    name = "arm_none_eabi",
+    constraint_values = [
+        "@platforms//os:none",
+        "@platforms//cpu:arm",
+    ],
+)

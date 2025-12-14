@@ -1,0 +1,17 @@
+cc_binary(
+    name = "app.elf",
+    srcs = ["main.c"],
+    additional_linker_inputs = ["link.ld"],
+    linkopts = [
+        "-nostdlib",
+        "-nostartfiles",
+        "-Wl,-T,$(location link.ld)",
+        "-Wl,--gc-sections",
+    ],
+    copts = [
+        "-mcpu=cortex-m33",
+        "-mthumb",
+        "-mfpu=fpv5-sp-d16",
+        "-mfloat-abi=hard",
+    ],
+)
